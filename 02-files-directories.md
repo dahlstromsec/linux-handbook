@@ -1,8 +1,8 @@
 # Files & Directories
 
-> Coming soon.
+This chapter covers the most common commands used to create, copy, move, remove and inspect files and directories.
 
-Commands to document:
+## Commands covered
 
 - touch
 - mkdir
@@ -15,3 +15,5 @@ Commands to document:
 - less
 - head
 - tail
+
+> Full command documentation will be added in the next revision.

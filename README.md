@@ -2,19 +2,12 @@
 
 This repository contains my personal Linux notes created while studying cybersecurity.
 
-The purpose of this repository is to document Linux commands, concepts, and practical examples as I continue developing my Linux skills through self-study, TryHackMe, Microsoft Learn, and my IT Security Analyst education.
+The goal is to build a practical Linux reference focused on cybersecurity. Each chapter contains concise explanations, syntax, examples, common uses, and a cybersecurity context.
 
-## Topics
+## Chapters
 
-- Navigation
-- File & Directory Management
-- Searching
-- Permissions
-- Networking
-- Package Management
-- Bash
-- Security Commands
+- 01 Navigation
+- 02 Files & Directories
+- 03 Searching
 
-## Goal
-
-This repository will continue to grow as I learn new Linux concepts, document my progress, and build a practical reference for future cybersecurity work.
+This repository will continue to grow throughout my cybersecurity studies.

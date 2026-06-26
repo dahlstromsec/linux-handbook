@@ -12,15 +12,11 @@ Understanding these commands is essential before working with files, directories
 
 Displays the absolute path of the current working directory.
 
----
-
 ### Syntax
 
 ```bash
 pwd
 ```
-
----
 
 ### Example
 
@@ -28,27 +24,21 @@ pwd
 pwd
 ```
 
-Example output:
+Output
 
 ```text
 /home/christoffer/Documents
 ```
 
----
-
 ### Common Uses
 
-- Verify your current location in the file system.
-- Avoid running commands in the wrong directory.
-- Confirm where files will be created or modified.
-
----
+- Verify your current location.
+- Confirm where commands will execute.
+- Avoid working in the wrong directory.
 
 ### Cybersecurity Context
 
-Before searching log files, editing configuration files, or running scripts, it is good practice to verify your current working directory. This helps prevent accidental changes to the wrong location.
-
----
+Before searching log files, editing configuration files, or running scripts, it is good practice to verify your current working directory.
 
 ### Related Commands
 
@@ -61,9 +51,7 @@ Before searching log files, editing configuration files, or running scripts, it 
 
 ### Purpose
 
-Lists the files and directories in the current working directory.
-
----
+Lists files and directories in the current working directory.
 
 ### Syntax
 
@@ -71,35 +59,27 @@ Lists the files and directories in the current working directory.
 ls
 ```
 
----
-
 ### Example
 
 ```bash
 ls
 ```
 
-Example output:
+Output
 
 ```text
 Documents  Downloads  Pictures  Music
 ```
 
----
-
 ### Common Uses
 
-- View the contents of the current directory.
-- Confirm that a file or directory exists.
-- Quickly inspect the structure of a directory.
-
----
+- View directory contents.
+- Confirm files exist.
+- Inspect a directory quickly.
 
 ### Cybersecurity Context
 
-The `ls` command is frequently used when navigating Linux systems during security assessments, log analysis, incident response, and system administration. It helps verify the contents of directories before viewing, modifying, or executing files.
-
----
+Frequently used when navigating Linux systems during investigations and incident response.
 
 ### Related Commands
 
@@ -113,9 +93,7 @@ The `ls` command is frequently used when navigating Linux systems during securit
 
 ### Purpose
 
-Displays files and directories in a detailed list format.
-
----
+Displays files and directories in long listing format.
 
 ### Syntax
 
@@ -123,41 +101,31 @@ Displays files and directories in a detailed list format.
 ls -l
 ```
 
----
-
 ### Example
 
 ```bash
 ls -l
 ```
 
-Example output:
+Output
 
 ```text
 drwxr-xr-x 2 christoffer users 4096 Jul 30 12:15 Documents
 -rw-r--r-- 1 christoffer users 842 Jul 29 20:48 notes.txt
 ```
 
----
-
 ### Common Uses
 
-- View file permissions.
-- Check file ownership.
-- See file sizes and modification dates.
-- Display detailed information about files and directories.
-
----
+- View permissions.
+- View ownership.
+- View file size and modification time.
 
 ### Cybersecurity Context
 
-The `ls -l` command is commonly used to inspect file permissions and ownership. This helps identify files that may have incorrect permissions or unexpected owners during security investigations and system administration.
-
----
+Useful for inspecting permissions and ownership during investigations.
 
 ### Related Commands
 
-- `ls`
 - `chmod`
 - `chown`
 - `stat`

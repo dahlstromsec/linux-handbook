@@ -1,8 +1,8 @@
 # Searching
 
-> Coming soon.
+Searching commands help locate files, directories and text within Linux systems.
 
-Commands:
+## Commands covered
 
 - find
 - locate
@@ -13,3 +13,5 @@ Commands:
 - sort
 - uniq
 - wc
+
+> Full command documentation will be added in the next revision.
