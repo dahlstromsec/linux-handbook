@@ -1,6 +1,6 @@
 # Linux Notes for Cybersecurity
 
-A practical Linux reference built while studying cybersecurity.
+Practical Linux handbook covering commands, concepts, and cybersecurity-focused examples.
 
 This repository contains my personal Linux notes covering essential Linux commands, concepts, and practical examples. The goal is to create a well-organized handbook that serves as both a learning resource and a quick reference for Linux administration and cybersecurity.
 
