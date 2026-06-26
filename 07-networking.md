@@ -320,7 +320,7 @@ ssh user@host
 ### Example
 
 ```bash
-ssh christoffer@192.168.1.10
+ssh user@192.168.1.10
 ```
 
 ### Cybersecurity Context
@@ -348,7 +348,7 @@ scp FILE user@host:/destination
 ### Example
 
 ```bash
-scp report.txt christoffer@192.168.1.10:/home/christoffer
+scp report.txt user@192.168.1.10:/home/user
 ```
 
 ### Common Uses
