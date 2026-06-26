@@ -1,6 +1,24 @@
 # Storage & Filesystems
 
-Storage commands help inspect disks, partitions and filesystem usage.
+> **Estimated Reading Time:** 10–15 minutes
+> **Difficulty:** Beginner
+> **Prerequisites:** Files & Directories
+
+Linux stores data on block devices such as hard drives, SSDs, and USB devices. These commands help you inspect disk usage, identify storage devices, and mount or unmount filesystems.
+
+---
+
+## What You'll Learn
+
+* Viewing disk usage
+* Measuring directory size
+* Mounting filesystems
+* Unmounting storage devices
+* Viewing connected disks
+
+---
+
+# Storage Commands
 
 ---
 
@@ -8,7 +26,7 @@ Storage commands help inspect disks, partitions and filesystem usage.
 
 ### Purpose
 
-Displays filesystem disk usage in a human-readable format.
+Displays disk space usage for mounted filesystems in a human-readable format.
 
 ### Syntax
 
@@ -16,9 +34,26 @@ Displays filesystem disk usage in a human-readable format.
 df -h
 ```
 
+### Example
+
+```bash
+df -h
+```
+
+### Common Uses
+
+* Check available disk space.
+* Identify nearly full drives.
+* Verify mounted filesystems.
+
+### Cybersecurity Context
+
+Useful when investigating systems that have stopped logging due to a full disk or when checking available storage before collecting forensic evidence.
+
 ### Related Commands
 
-- `du -sh`
+* `du`
+* `lsblk`
 
 ---
 
@@ -26,7 +61,7 @@ df -h
 
 ### Purpose
 
-Displays the size of a directory.
+Displays the total size of a directory.
 
 ### Syntax
 
@@ -34,9 +69,27 @@ Displays the size of a directory.
 du -sh DIRECTORY
 ```
 
+### Examples
+
+```bash
+du -sh ~/Downloads
+
+du -sh /var/log
+```
+
+### Common Uses
+
+* Find large directories.
+* Monitor storage usage.
+* Identify unnecessary files.
+
+### Cybersecurity Context
+
+Useful when identifying large log directories or unexpected data growth caused by malware or excessive logging.
+
 ### Related Commands
 
-- `df -h`
+* `df -h`
 
 ---
 
@@ -44,7 +97,7 @@ du -sh DIRECTORY
 
 ### Purpose
 
-Mounts a filesystem.
+Mounts a filesystem, making it accessible through the Linux directory structure.
 
 ### Syntax
 
@@ -52,13 +105,25 @@ Mounts a filesystem.
 mount DEVICE DIRECTORY
 ```
 
+### Example
+
+```bash
+sudo mount /dev/sdb1 /mnt
+```
+
+### Common Uses
+
+* Mount USB drives.
+* Access additional disks.
+* Mount ISO images.
+
 ### Cybersecurity Context
 
-Useful when mounting forensic images or removable media.
+Frequently used when mounting forensic images or removable media during investigations.
 
 ### Related Commands
 
-- `umount`
+* `umount`
 
 ---
 
@@ -66,7 +131,7 @@ Useful when mounting forensic images or removable media.
 
 ### Purpose
 
-Unmounts a filesystem safely.
+Safely unmounts a mounted filesystem.
 
 ### Syntax
 
@@ -74,9 +139,24 @@ Unmounts a filesystem safely.
 umount DIRECTORY
 ```
 
+### Example
+
+```bash
+sudo umount /mnt
+```
+
+### Common Uses
+
+* Safely remove USB devices.
+* Disconnect mounted drives.
+
+### Cybersecurity Context
+
+Always unmount storage devices before disconnecting them to prevent data corruption.
+
 ### Related Commands
 
-- `mount`
+* `mount`
 
 ---
 
@@ -84,7 +164,7 @@ umount DIRECTORY
 
 ### Purpose
 
-Lists available block devices.
+Lists available block devices such as hard drives, SSDs, and USB devices.
 
 ### Syntax
 
@@ -92,10 +172,48 @@ Lists available block devices.
 lsblk
 ```
 
+### Example
+
+```bash
+lsblk
+```
+
+### Common Uses
+
+* View connected storage devices.
+* Identify partitions.
+* Verify newly connected disks.
+
 ### Cybersecurity Context
 
-Useful for identifying disks and USB devices.
+Useful when identifying removable media, external drives, or forensic disks connected to a system.
 
 ### Related Commands
 
-- `df -h`
+* `df -h`
+* `mount`
+
+---
+
+# Common Mistakes
+
+| Problem                   | Cause                              |
+| ------------------------- | ---------------------------------- |
+| `No space left on device` | Disk is full                       |
+| `umount: target is busy`  | Files are still being used         |
+| Device not found          | Incorrect device name              |
+| Permission denied         | Administrative privileges required |
+
+---
+
+# Summary
+
+You should now understand how to inspect storage devices, monitor disk usage, and safely mount or unmount filesystems.
+
+---
+
+# Related Chapters
+
+* Files & Directories
+* Processes
+* Security
