@@ -1,8 +1,100 @@
 # Navigation
 
-Navigation commands are used to move around the Linux file system and determine your current working location.
+> **Estimated Reading Time:** 5–10 minutes
+> **Difficulty:** Beginner
+> **Prerequisites:** None
 
-Understanding these commands is essential before working with files, directories, or system administration tasks.
+Navigation is one of the first Linux skills you'll use. Before creating files, searching logs, editing configurations, or running scripts, you first need to know where you are in the file system and how to move between directories.
+
+Understanding navigation commands builds the foundation for almost every other Linux task.
+
+---
+
+## What You'll Learn
+
+* Understanding the Linux file system
+* Absolute vs. relative paths
+* Viewing the current working directory
+* Listing directory contents
+* Navigating between directories
+* Viewing hidden files
+
+---
+
+# Linux File System Overview
+
+Linux uses a hierarchical directory structure that starts at the root directory (`/`).
+
+```text
+/
+
+├── home
+│   └── christoffer
+│       ├── Desktop
+│       ├── Documents
+│       ├── Downloads
+│       └── Pictures
+│
+├── etc
+├── var
+├── usr
+├── opt
+└── tmp
+```
+
+Some common directories include:
+
+| Directory | Purpose                              |
+| --------- | ------------------------------------ |
+| `/`       | Root directory                       |
+| `/home`   | User home directories                |
+| `/etc`    | System configuration files           |
+| `/var`    | Logs and variable data               |
+| `/usr`    | Installed applications and utilities |
+| `/tmp`    | Temporary files                      |
+
+---
+
+# Absolute vs. Relative Paths
+
+Linux allows you to reference files and directories using either **absolute** or **relative** paths.
+
+### Absolute Path
+
+Starts from the root directory (`/`).
+
+Example:
+
+```bash
+/home/christoffer/Documents
+```
+
+### Relative Path
+
+Starts from your current working directory.
+
+Examples:
+
+```bash
+Documents
+
+../Downloads
+
+../../Desktop
+```
+
+Useful shortcuts:
+
+| Shortcut | Meaning           |
+| -------- | ----------------- |
+| `.`      | Current directory |
+| `..`     | Parent directory  |
+| `~`      | Home directory    |
+| `/`      | Root directory    |
+
+---
+
+# Command Reference
 
 ---
 
@@ -32,9 +124,9 @@ Output
 
 ### Common Uses
 
-- Verify your current location.
-- Confirm where commands will execute.
-- Avoid working in the wrong directory.
+* Verify your current location.
+* Confirm where commands will execute.
+* Avoid working in the wrong directory.
 
 ### Cybersecurity Context
 
@@ -42,8 +134,8 @@ Before searching log files, editing configuration files, or running scripts, it 
 
 ### Related Commands
 
-- `ls`
-- `cd`
+* `ls`
+* `cd`
 
 ---
 
@@ -51,81 +143,127 @@ Before searching log files, editing configuration files, or running scripts, it 
 
 ### Purpose
 
-Lists files and directories in the current working directory.
+Lists files and directories within a directory.
 
 ### Syntax
 
 ```bash
-ls
+ls [OPTION]... [DIRECTORY]
 ```
 
-### Example
+### Common Options
+
+| Option | Description                  |
+| ------ | ---------------------------- |
+| `-l`   | Long listing format          |
+| `-a`   | Show hidden files            |
+| `-h`   | Human-readable file sizes    |
+| `-R`   | List directories recursively |
+
+### Examples
 
 ```bash
 ls
-```
 
-Output
+ls -la
 
-```text
-Documents  Downloads  Pictures  Music
+ls -lh
+
+ls -R
 ```
 
 ### Common Uses
 
-- View directory contents.
-- Confirm files exist.
-- Inspect a directory quickly.
+* View directory contents.
+* Check if files exist.
+* Display hidden files.
+* View file permissions.
 
 ### Cybersecurity Context
 
-Frequently used when navigating Linux systems during investigations and incident response.
+Frequently used during investigations to inspect directories before analyzing logs, scripts, or suspicious files.
 
 ### Related Commands
 
-- `pwd`
-- `cd`
-- `find`
+* `pwd`
+* `cd`
+* `find`
 
 ---
 
-## ls -l
+## cd
 
 ### Purpose
 
-Displays files and directories in long listing format.
+Changes the current working directory.
 
 ### Syntax
 
 ```bash
-ls -l
+cd DIRECTORY
 ```
 
-### Example
+### Examples
 
 ```bash
-ls -l
-```
+cd Documents
 
-Output
+cd ..
 
-```text
-drwxr-xr-x 2 christoffer users 4096 Jul 30 12:15 Documents
--rw-r--r-- 1 christoffer users 842 Jul 29 20:48 notes.txt
+cd ~
+
+cd /
+
+cd -
 ```
 
 ### Common Uses
 
-- View permissions.
-- View ownership.
-- View file size and modification time.
+* Navigate between directories.
+* Return to the home directory.
+* Move to the previous directory.
+* Access system folders.
 
 ### Cybersecurity Context
 
-Useful for inspecting permissions and ownership during investigations.
+Security analysts constantly change directories when reviewing logs, investigating files, or navigating Linux servers remotely.
 
 ### Related Commands
 
-- `chmod`
-- `chown`
-- `stat`
+* `pwd`
+* `ls`
+
+---
+
+# Navigation Tips
+
+* Press **Tab** to autocomplete files and directories.
+* Press **↑** to cycle through previous commands.
+* Use `history` to display previous commands.
+* Press **Ctrl + L** to clear the terminal.
+
+---
+
+# Common Mistakes
+
+| Problem                     | Cause                      |
+| --------------------------- | -------------------------- |
+| `No such file or directory` | Incorrect path or spelling |
+| `Permission denied`         | Insufficient permissions   |
+| Wrong directory             | Forgot to check with `pwd` |
+
+---
+
+# Summary
+
+You should now understand how to determine your current location, list directory contents, navigate between directories, and recognize the difference between absolute and relative paths.
+
+These commands form the foundation for almost every Linux task you'll perform throughout your cybersecurity journey.
+
+---
+
+# Related Chapters
+
+* Files & Directories
+* Searching
+* Permissions
