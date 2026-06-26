@@ -54,3 +54,4 @@ Before searching log files, editing configuration files, or running scripts, it 
 
 * `ls`
 * `cd`
+* `find`
